@@ -16,5 +16,11 @@ export default {
   },
   async closeMessage ({ commit }) {
     await commit('setMessageStatClose')
+  },
+  async editMessage ({ commit }, data) {
+    await commit('editMessage', data)
+  },
+  async deleteMessage ({ commit }, data) {
+    await commit('deleteMessage', data)
   }
 }

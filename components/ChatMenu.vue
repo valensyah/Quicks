@@ -98,7 +98,8 @@ export default {
       isTask: false,
       isSubMenu: false,
       message: '',
-      date: ''
+      date: '',
+      id: 5
     }
   },
   computed: {
@@ -155,6 +156,7 @@ export default {
           GroupID: this.detail.GroupID,
           Data: [
             {
+              id: this.id + 1,
               Username: 'Saya',
               Message: this.message,
               Time: document.getElementById('date').value,
@@ -165,6 +167,7 @@ export default {
         }
         this.$store.dispatch('message/send', data)
       }
+      this.id += 1
     }
   }
 }

@@ -23,7 +23,7 @@ export default {
     let count = 0
     if (state.listMessage.length > 0) {
       state.listMessage.map((item) => {
-        if (this.$moment(item.Date).format('DD/MM/YYYY') === this.$moment(data.Date).format('DD/MM/YYYY')) {
+        if (item.Date === data.Date) {
           item.Data.push(data.Data[0])
         } else {
           count += 1
@@ -33,7 +33,8 @@ export default {
     } else {
       state.listMessage.push(data)
     }
-    if (count <= 0) {
+
+    if (count === state.listMessage.length) {
       state.listMessage.push(data)
     }
     state.detail = state.listMessage
@@ -43,5 +44,37 @@ export default {
   },
   setMessageStatClose (state) {
     state.messageOpen = false
+  },
+  editMessage (state, data) {
+    state.listMessage.map((item) => {
+      if (item.GroupID === data.GroupID) {
+        item.Data.map((val) => {
+          if (val.id === data.id) {
+            item.Message = data.Message
+          }
+          return item
+        })
+      }
+      return state.listMessage
+    })
+    state.detail = state.listMessage
+  },
+  deleteMessage (state, data) {
+    state.listMessage.map((item, i) => {
+      if (item.GroupID === data.GroupID) {
+        item.Data.map((val, i) => {
+          if (val.id === data.id) {
+            if (state.listMessage.length > 0) {
+              val.splice(i, i + 1)
+            } else {
+              item.splice(i, i + 1)
+            }
+          }
+          return item
+        })
+      }
+      return state.listMessage
+    })
+    state.detail = state.listMessage
   }
 }

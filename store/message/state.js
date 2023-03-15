@@ -52,6 +52,7 @@ export default () => ({
       GroupID: 1,
       Data: [
         {
+          id: 1,
           Username: 'Saya',
           Message: 'No worries. it will be completed asap ',
           Time: '2023-03-13 19:32',
@@ -65,6 +66,7 @@ export default () => ({
       GroupID: 1,
       Data: [
         {
+          id: 2,
           Username: 'Mary Hilda',
           Message: 'Hello Obaidullah, I will be your case advisor for case #029290. I have assigned some homework for you to fill. Please keep up with the due dates. Should you have any questions, you can message me anytime. Thanks. ',
           Time: '2023-03-14 19:32',
@@ -72,6 +74,7 @@ export default () => ({
           BgChat: 'bg-orange-100'
         },
         {
+          id: 3,
           Username: 'Saya',
           Message: 'Please contact Mary for questions regarding the case bcs she will be managing your forms from now on! Thanks Mary.',
           Time: '2023-03-14 19:32',
@@ -79,6 +82,7 @@ export default () => ({
           BgChat: 'bg-purple-100'
         },
         {
+          id: 4,
           Username: 'Mary Hilda',
           Message: 'Sure thing, Claren',
           Time: '2023-03-14 19:32',
@@ -86,6 +90,7 @@ export default () => ({
           BgChat: 'bg-orange-100'
         },
         {
+          id: 5,
           Username: 'Obaidullah Amarkhil',
           Message: 'Morning. I’ll try to do them. Thanks',
           Time: '2023-03-14 19:32',
